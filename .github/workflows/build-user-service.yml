@@ -2,11 +2,17 @@ name: Build the UserService
 
 on:
   push:
+    branches: [ main ]
     paths:
       - "UserService/**"
       - "UserService.Tests/**"
       - ".github/workflows/build-user-service.yml"
-
+  pull_request:
+    branches: [ main, dev ]
+    paths:
+      - "UserService/**"
+      - "UserService.Tests/**"
+      - ".github/workflows/build-user-service.yml"
 env:
   PROJECT_PATH: 'UserService/UserService.csproj'
   TEST_PATH: 'UserService.Tests/UserService.Tests.csproj'
