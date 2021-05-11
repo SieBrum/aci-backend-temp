@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace ImageService.Controllers
 {
     /// <summary>
-    /// Image controller this controller is used for the calls between API and frontend for managing the images in the ACI Rental system.
+    /// Image controller this controller is used for the calls between API and frontend for managing the images in the ACI Rental system
     /// </summary>
     [ApiController]
     [Route("[controller]")]
