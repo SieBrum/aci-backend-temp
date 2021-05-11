@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "ImageService/**"
+      - "ImageService.Tests/**"
       - ".github/workflows/build-image-service.yml"
 
 env:

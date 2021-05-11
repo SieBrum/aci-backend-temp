@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "ItemService/**"
+      - "ItemService.Tests/**"
       - ".github/workflows/build-product-service.yml"
 
 env:
