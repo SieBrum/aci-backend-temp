@@ -33,7 +33,7 @@ namespace ProductService.Tests.UnitTests
             var actionResult = result as BadRequestObjectResult;
             Assert.IsType<BadRequestObjectResult>(result);
             Assert.Equal(400, actionResult.StatusCode);
-            Assert.Equal("PRODUCT.ARCHIVE.NO_VALID_ID", actionResult.Value);
+            Assert.Equal("PRODUCT.ARCHIVE.NO_VALID_IDDDDD", actionResult.Value);
         }
 
         [Fact]
