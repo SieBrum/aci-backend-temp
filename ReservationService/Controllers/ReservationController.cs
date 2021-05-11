@@ -20,7 +20,7 @@ namespace ReservationService.Controllers
     public class ReservationController : ControllerBase
     {
         /// <summary>
-        /// Database context for the reservation service, this is used to make calls to the reservation table
+        /// Database context for the reservation service, this is used to make calls to the reservation table.
         /// </summary>
         private readonly ReservationServiceDatabaseContext _dbContext;
 
