@@ -9,6 +9,7 @@ on:
       - "UserService.Tests/**"
       - ".github/workflows/build/build-user-service.yml"
   pull_request:
+    types: [assigned, opened, synchronize, reopened]
     branches: 
       - main
       - dev
