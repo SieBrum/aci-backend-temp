@@ -1,25 +1,25 @@
-name: Build the ImageService
+name: Build the NoteService
 
 on:
   push:
     branches:
       - main
     paths:
-      - "ImageService/**"
-      - "ImageService.Tests/**"
-      - ".github/workflows/build/build-image-service.yml"
+      - "NoteService/**"
+      - "NoteService.Tests/**"
+      - ".github/workflows/build-note-service.yml"
   pull_request:
     branches: 
       - main
       - dev
     paths:
-      - "ImageService/**"
-      - "ImageService.Tests/**"
-      - ".github/workflows/build/build-image-service.yml"
+      - "NoteService/**"
+      - "NoteService.Tests/**"
+      - ".github/workflows/build-note-service.yml"
 
 env:
-  PROJECT_PATH: 'ImageService/ImageService.csproj'
-  TEST_PATH: 'ImageService.Tests/ImageService.Tests.csproj'
+  PROJECT_PATH: 'NoteService/NoteService.csproj'
+  TEST_PATH: 'NoteService.Tests/NoteService.Tests.csproj'
 
 jobs:
   build:

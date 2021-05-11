@@ -1,25 +1,30 @@
-name: Build the NoteService
+name: Build the UserService
 
 on:
   push:
     branches:
       - main
     paths:
-      - "NoteService/**"
-      - "NoteService.Tests/**"
-      - ".github/workflows/build/build-note-service.yml"
+      - "UserService/**"
+      - "UserService.Tests/**"
+      - ".github/workflows/build-user-service.yml"
   pull_request:
+    type:
+      - assigned
+      - opened
+      - synchronize
+      - reopened
     branches: 
       - main
       - dev
     paths:
-      - "NoteService/**"
-      - "NoteService.Tests/**"
-      - ".github/workflows/build/build-note-service.yml"
+      - "UserService/**"
+      - "UserService.Tests/**"
+      - ".github/workflows/build-user-service.yml"
 
 env:
-  PROJECT_PATH: 'NoteService/NoteService.csproj'
-  TEST_PATH: 'NoteService.Tests/NoteService.Tests.csproj'
+  PROJECT_PATH: 'UserService/UserService.csproj'
+  TEST_PATH: 'UserService.Tests/UserService.Tests.csproj'
 
 jobs:
   build:
