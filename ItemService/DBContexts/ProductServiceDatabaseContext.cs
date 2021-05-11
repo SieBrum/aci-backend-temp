@@ -49,7 +49,7 @@ namespace ProductService.DBContexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-                optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=ProductService;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=productservice.database.windows.net;Database=ProductService;User ID=acigroep;Password=nTSA5cUwxFja39;Trusted_Connection=False;Encrypt=True;");
 
             base.OnConfiguring(optionsBuilder);
         }
