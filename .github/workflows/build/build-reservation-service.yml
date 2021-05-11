@@ -1,21 +1,25 @@
-name: Build the UserService
+name: Build the ReservationService
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
     paths:
-      - "UserService/**"
-      - "UserService.Tests/**"
-      - ".github/workflows/build-user-service.yml"
+      - "ReservationService/**"
+      - "ReservationService.Tests/**"
+      - ".github/workflows/build/build-reservation-service.yml"
   pull_request:
-    branches: [ main, dev ]
+    branches: 
+      - main
+      - dev
     paths:
-      - "UserService/**"
-      - "UserService.Tests/**"
-      - ".github/workflows/build-user-service.yml"
+      - "ReservationService/**"
+      - "ReservationService.Tests/**"
+      - ".github/workflows/build/build-reservation-service.yml"
+
 env:
-  PROJECT_PATH: 'UserService/UserService.csproj'
-  TEST_PATH: 'UserService.Tests/UserService.Tests.csproj'
+  PROJECT_PATH: 'ReservationService/ReservationService.csproj'
+  TEST_PATH: 'ReservationService.Tests/ReservationService.Tests.csproj'
 
 jobs:
   build:

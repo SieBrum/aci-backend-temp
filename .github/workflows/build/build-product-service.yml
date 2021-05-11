@@ -2,10 +2,20 @@ name: Build the ProductService
 
 on:
   push:
+    branches:
+      - main
     paths:
       - "ItemService/**"
       - "ItemService.Tests/**"
-      - ".github/workflows/build-product-service.yml"
+      - ".github/workflows/build/build-product-service.yml"
+  pull_request:
+    branches: 
+      - main
+      - dev
+    paths:
+      - "ItemService/**"
+      - "ItemService.Tests/**"
+      - ".github/workflows/build/build-product-service.yml"
 
 env:
   PROJECT_PATH: 'ItemService/ProductService.csproj'

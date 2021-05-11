@@ -2,10 +2,20 @@ name: Build the NoteService
 
 on:
   push:
+    branches:
+      - main
     paths:
       - "NoteService/**"
       - "NoteService.Tests/**"
-      - ".github/workflows/build-note-service.yml"
+      - ".github/workflows/build/build-note-service.yml"
+  pull_request:
+    branches: 
+      - main
+      - dev
+    paths:
+      - "NoteService/**"
+      - "NoteService.Tests/**"
+      - ".github/workflows/build/build-note-service.yml"
 
 env:
   PROJECT_PATH: 'NoteService/NoteService.csproj'
