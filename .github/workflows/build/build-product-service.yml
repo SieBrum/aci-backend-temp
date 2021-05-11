@@ -1,15 +1,25 @@
-name: Build the ReservationService
+name: Build the ProductService
 
 on:
   push:
+    branches:
+      - main
     paths:
-      - "ReservationService/**"
-      - "ReservationService.Tests/**"
-      - ".github/workflows/build-reservation-service.yml"
+      - "ItemService/**"
+      - "ItemService.Tests/**"
+      - ".github/workflows/build/build-product-service.yml"
+  pull_request:
+    branches: 
+      - main
+      - dev
+    paths:
+      - "ItemService/**"
+      - "ItemService.Tests/**"
+      - ".github/workflows/build/build-product-service.yml"
 
 env:
-  PROJECT_PATH: 'ReservationService/ReservationService.csproj'
-  TEST_PATH: 'ReservationService.Tests/ReservationService.Tests.csproj'
+  PROJECT_PATH: 'ItemService/ProductService.csproj'
+  TEST_PATH: 'ItemService.Tests/ProductService.Tests.csproj'
 
 jobs:
   build:

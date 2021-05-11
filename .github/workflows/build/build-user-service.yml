@@ -1,15 +1,25 @@
-name: Build the ProductService
+name: Build the UserService
 
 on:
   push:
+    branches:
+      - main
     paths:
-      - "ItemService/**"
-      - "ItemService.Tests/**"
-      - ".github/workflows/build-product-service.yml"
+      - "UserService/**"
+      - "UserService.Tests/**"
+      - ".github/workflows/build/build-user-service.yml"
+  pull_request:
+    branches: 
+      - main
+      - dev
+    paths:
+      - "UserService/**"
+      - "UserService.Tests/**"
+      - ".github/workflows/build/build-user-service.yml"
 
 env:
-  PROJECT_PATH: 'ItemService/ProductService.csproj'
-  TEST_PATH: 'ItemService.Tests/ProductService.Tests.csproj'
+  PROJECT_PATH: 'UserService/UserService.csproj'
+  TEST_PATH: 'UserService.Tests/UserService.Tests.csproj'
 
 jobs:
   build:
