@@ -1,0 +1,32 @@
+name: Build the ProductService
+
+on:
+  push:
+    paths:
+      - "ItemService/**"
+      - ".github/workflows/build-product-service.yml"
+
+env:
+  PROJECT_PATH: 'ItemService/ProductService.csproj'
+  TEST_PATH: 'ItemService.Tests/ProductService.Tests.csproj'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Checkout'
+      uses: actions/checkout@v2
+
+    - name: 'Install dotnet'
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '5.0.x'
+
+    - name: 'Restore packages'
+      run: dotnet restore ${{ env.PROJECT_PATH }}
+
+    - name: 'Build project'
+      run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
+
+    - name: Run tests
+      run: dotnet test ${{ env.TEST_PATH }}
