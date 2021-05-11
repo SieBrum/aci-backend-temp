@@ -18,7 +18,7 @@ namespace UserService.Controllers
     public class PermissionController : ControllerBase
     {
         /// <summary>
-        /// Database context for Permissions, this is used to make calls to the database.
+        /// Database context for Permissions, this is used to make calls to the database..
         /// </summary>
         private readonly UserServiceDatabaseContext _dbContext;
 
