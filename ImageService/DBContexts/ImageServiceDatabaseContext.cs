@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -42,7 +43,16 @@ namespace ImageService.DBContexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-                optionsBuilder.UseSqlServer("Server=productservice.database.windows.net;Database=ImageService;User ID=acigroep;Password=nTSA5cUwxFja39;Trusted_Connection=False;Encrypt=True;");
+            {
+                string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"databases\aci_db_string.txt");
+                if (!File.Exists(path))
+                {
+                    throw new FileNotFoundException("Could not find database string!");
+                }
+
+                optionsBuilder.UseSqlServer(File.ReadAllText(path).Replace("DATABASE_NAME", "ImageService"));
+            }
+
             base.OnConfiguring(optionsBuilder);
         }
     }
