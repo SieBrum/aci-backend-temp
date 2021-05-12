@@ -82,7 +82,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "51.105.194.49",
+          "Host": "10.244.0.24",
           "Port": 80
         }
       ],
@@ -93,7 +93,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "51.105.194.49",
+          "Host": "10.244.0.24",
           "Port": 80
         }
       ],
