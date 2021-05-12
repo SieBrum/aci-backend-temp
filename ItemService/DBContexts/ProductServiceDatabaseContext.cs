@@ -60,7 +60,6 @@ namespace ProductService.DBContexts
                 optionsBuilder.UseSqlServer(File.ReadAllText(path).Replace("DATABASE_NAME", "ProductService"));
             }
 
-
             base.OnConfiguring(optionsBuilder);
         }
     }

@@ -7,7 +7,7 @@ on:
     paths:
       - "ReservationService/**"
       - "ReservationService.Tests/**"
-      - ".github/workflows/build/build-reservation-service.yml"
+      - ".github/workflows/build-reservation-service.yml"
   pull_request:
     branches: 
       - main
@@ -15,7 +15,7 @@ on:
     paths:
       - "ReservationService/**"
       - "ReservationService.Tests/**"
-      - ".github/workflows/build/build-reservation-service.yml"
+      - ".github/workflows/build-reservation-service.yml"
 
 env:
   PROJECT_PATH: 'ReservationService/ReservationService.csproj'
