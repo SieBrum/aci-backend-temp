@@ -24,10 +24,11 @@ jobs:
         name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
+        run: ls
         with:
           context: ImageService
           push: true
-          tags: siebrum/aci-image-service:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/aci-image-service:latest
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
