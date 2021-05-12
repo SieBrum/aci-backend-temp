@@ -44,13 +44,13 @@ namespace NoteService.DBContexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"databases\aci_db_string.txt");
-                if (!File.Exists(path))
+                var dbString = Environment.GetEnvironmentVariable("aci_db_string");
+                if (string.IsNullOrWhiteSpace(dbString))
                 {
-                    throw new FileNotFoundException("Could not find database string!");
+                    throw new MissingFieldException("Database environment variable not found.");
                 }
 
-                optionsBuilder.UseSqlServer(File.ReadAllText(path).Replace("DATABASE_NAME", "NoteService"));
+                optionsBuilder.UseSqlServer(Environment.GetEnvironmentVariable("aci_db_string").Replace("DATABASE_NAME", "NoteService"));
             }
 
             base.OnConfiguring(optionsBuilder);
