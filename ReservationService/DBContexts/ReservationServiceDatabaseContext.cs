@@ -2,6 +2,7 @@
 using ReservationService.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -43,7 +44,15 @@ namespace ReservationService.DBContexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-                optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=ReservationService;Trusted_Connection=True;");
+            {
+                string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), @"databases\aci_db_string.txt");
+                if (!File.Exists(path))
+                {
+                    throw new FileNotFoundException("Could not find database string!");
+                }
+
+                optionsBuilder.UseSqlServer(File.ReadAllText(path).Replace("DATABASE_NAME", "ReservationService"));
+            }
 
             base.OnConfiguring(optionsBuilder);
         }
