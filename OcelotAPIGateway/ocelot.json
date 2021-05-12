@@ -82,8 +82,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 64799
+          "Host": "10.0.178.187",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/image"
@@ -93,8 +93,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 64799
+          "Host": "10.0.178.187",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/image/{productId}"
