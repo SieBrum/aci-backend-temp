@@ -1,14 +1,14 @@
-name: Release new ImageService to Docker hub
+name: Release new UserService to Docker hub
 
 on:
   push:
     branches:
       - main
     paths:
-      - "ImageService/**"
-      - ".github/workflows/release-image-service.yml"
+      - "UserService/**"
+      - ".github/workflows/release-user-service.yml"
 env:
-  PROJECT_PATH: 'ImageService/ImageService.csproj'
+  PROJECT_PATH: 'UserService/UserService.csproj'
 
 jobs:
   build:
@@ -40,6 +40,6 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v2
       with:
-        context: ImageService
+        context: UserService
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/aci-image-service:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/aci-user-service:latest
