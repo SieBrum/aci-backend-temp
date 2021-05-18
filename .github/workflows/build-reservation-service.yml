@@ -51,4 +51,5 @@ jobs:
         sonarProjectKey: siebrum_aci-backend-reservation-service
         sonarProjectName:  aci-backend-reservation-service
         sonarOrganization: siebrum
-        dotnetBuildArguments: ./ReservationService
+        dotnetBuildArguments: ./NoteService
+        dotnetTestArguments: ./NoteService.Tests
