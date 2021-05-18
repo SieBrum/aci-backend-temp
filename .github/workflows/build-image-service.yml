@@ -40,11 +40,8 @@ jobs:
 
     - name: 'Build project'
       run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
-
-    - name: Run tests
-      run: dotnet test ${{ env.TEST_PATH }}
-
-    # https://github.com/highbyte/sonarscan-dotnet
+      
+          # https://github.com/highbyte/sonarscan-dotnet
     - name: SonarScanner for .NET 5
       uses: highbyte/sonarscan-dotnet@2.0
       with:
@@ -52,3 +49,8 @@ jobs:
         sonarProjectName:  aci-backend-image-service
         sonarOrganization: siebrum
         dotnetBuildArguments: ./ImageService
+
+
+    - name: Run tests
+      run: dotnet test ${{ env.TEST_PATH }}
+
