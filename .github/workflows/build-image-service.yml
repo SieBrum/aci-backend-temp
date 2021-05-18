@@ -48,6 +48,7 @@ jobs:
     - name: SonarScanner for .NET 5
       uses: highbyte/sonarscan-dotnet@2.0
       with:
+        sonarProjectKey: aci-backend-image-service
         sonarProjectName:  aci-backend-image-service
-        sonarOrganization: SieBrum
+        sonarOrganization: siebrum
         dotnetBuildArguments: ./ImageService
