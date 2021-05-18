@@ -52,3 +52,4 @@ jobs:
         sonarProjectName:  aci-backend-note-service
         sonarOrganization: siebrum
         dotnetBuildArguments: ./NoteService
+        dotnetTestArguments: ./NoteService.Tests
