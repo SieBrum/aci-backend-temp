@@ -20,6 +20,8 @@ on:
 env:
   PROJECT_PATH: 'NoteService/NoteService.csproj'
   TEST_PATH: 'NoteService.Tests/NoteService.Tests.csproj'
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_NOTE_SERVICE }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:
@@ -41,3 +43,12 @@ jobs:
 
     - name: Run tests
       run: dotnet test ${{ env.TEST_PATH }}
+
+    # https://github.com/highbyte/sonarscan-dotnet
+    - name: SonarScanner for .NET 5
+      uses: highbyte/sonarscan-dotnet@2.0
+      with:
+        sonarProjectKey: siebrum_aci-backend-note-service
+        sonarProjectName:  aci-backend-note-service
+        sonarOrganization: siebrum
+        dotnetBuildArguments: ./NoteService
