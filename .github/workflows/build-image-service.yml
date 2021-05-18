@@ -48,7 +48,7 @@ jobs:
         sonarProjectKey: siebrum_aci-backend-image-service
         sonarProjectName:  aci-backend-image-service
         sonarOrganization: siebrum
-        dotnetBuildArguments: ./AuthenticationService
+        dotnetBuildArguments: ./ImageService
 
 
     - name: Run tests
