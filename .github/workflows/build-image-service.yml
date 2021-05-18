@@ -20,6 +20,8 @@ on:
 env:
   PROJECT_PATH: 'ImageService/ImageService.csproj'
   TEST_PATH: 'ImageService.Tests/ImageService.Tests.csproj'
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:
