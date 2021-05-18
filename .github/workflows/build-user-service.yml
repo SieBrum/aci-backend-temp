@@ -52,3 +52,4 @@ jobs:
         sonarProjectName:  aci-backend-user-service
         sonarOrganization: siebrum
         dotnetBuildArguments: ./UserService
+        dotnetTestArguments: ./UserService.Tests
