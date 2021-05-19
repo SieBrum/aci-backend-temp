@@ -82,7 +82,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "10.244.0.24",
+          "Host": "aci-image-service",
           "Port": 80
         }
       ],
@@ -93,7 +93,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "10.244.0.24",
+          "Host": "aci-image-service",
           "Port": 80
         }
       ],

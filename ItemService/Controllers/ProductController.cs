@@ -124,7 +124,7 @@ namespace ProductService.Controllers
                 ProductState = product.ProductState
             };
 
-            var image = await $"https://localhost:44372/api/image/{product.Id}".AllowAnyHttpStatus().GetJsonAsync<ImageBlobModel>();
+            var image = await $"http://51.105.194.49/image/{product.Id}".AllowAnyHttpStatus().GetJsonAsync<ImageBlobModel>();
             if(image != default && image.Blob != default)
             {
                 cartProduct.Image = Convert.ToBase64String(image.Blob);
@@ -219,7 +219,7 @@ namespace ProductService.Controllers
             if (addProductModel.Images != default && addProductModel.Images.Any())
             {
                 var addImagesObject = new AddImageModel(newProduct.Id, LinkedTableType.PRODUCT, addProductModel.Images);
-                if ((await $"https://localhost:44372/api/image".AllowAnyHttpStatus().PostJsonAsync(addImagesObject)).StatusCode != 201)
+                if ((await $"http://51.105.194.49/image".AllowAnyHttpStatus().PostJsonAsync(addImagesObject)).StatusCode != 201)
                 {
                     _dbContext.Products.Remove(newProduct);
                     await _dbContext.SaveChangesAsync();
