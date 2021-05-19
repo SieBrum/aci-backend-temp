@@ -26,7 +26,6 @@ namespace OcelotAPIGateway
             })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseUrls("http://localhost:56005");
                     webBuilder.UseStartup<Startup>();
                 });
     }
