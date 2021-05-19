@@ -20,6 +20,8 @@ on:
 env:
   PROJECT_PATH: 'UserService/UserService.csproj'
   TEST_PATH: 'UserService.Tests/UserService.Tests.csproj'
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_USER_SERVICE }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:
@@ -41,3 +43,13 @@ jobs:
 
     - name: Run tests
       run: dotnet test ${{ env.TEST_PATH }}
+
+      # https://github.com/highbyte/sonarscan-dotnet
+    - name: SonarScanner for .NET 5
+      uses: highbyte/sonarscan-dotnet@2.0
+      with:
+        sonarProjectKey: siebrum_aci-backend-user-service
+        sonarProjectName:  aci-backend-user-service
+        sonarOrganization: siebrum
+        dotnetBuildArguments: ./UserService
+        dotnetTestArguments: ./UserService.Tests

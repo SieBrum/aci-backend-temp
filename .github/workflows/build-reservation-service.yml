@@ -20,6 +20,8 @@ on:
 env:
   PROJECT_PATH: 'ReservationService/ReservationService.csproj'
   TEST_PATH: 'ReservationService.Tests/ReservationService.Tests.csproj'
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_RESERVATION_SERVICE }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:
@@ -41,3 +43,13 @@ jobs:
 
     - name: Run tests
       run: dotnet test ${{ env.TEST_PATH }}
+
+    # https://github.com/highbyte/sonarscan-dotnet
+    - name: SonarScanner for .NET 5
+      uses: highbyte/sonarscan-dotnet@2.0
+      with:
+        sonarProjectKey: siebrum_aci-backend-reservation-service
+        sonarProjectName:  aci-backend-reservation-service
+        sonarOrganization: siebrum
+        dotnetBuildArguments: ./NoteService
+        dotnetTestArguments: ./NoteService.Tests
