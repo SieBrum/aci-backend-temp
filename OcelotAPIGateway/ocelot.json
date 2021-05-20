@@ -6,7 +6,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "aci-product-service",
-          "Port": 64807
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/product"
@@ -17,7 +17,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "aci-product-service",
-          "Port": 64807
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/product/page/{pageIndex}/{pageSize}"
@@ -28,7 +28,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "aci-product-service",
-          "Port": 64807
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/product/{productId}"
@@ -39,7 +39,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "aci-product-service",
-          "Port": 64807
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/product/lastcatalog"
@@ -50,7 +50,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "aci-product-service",
-          "Port": 64807
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/product/{archiveProductId}"
@@ -61,7 +61,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "aci-reservation-service",
-          "Port": 44387
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/reservation/{productId}"
@@ -72,7 +72,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "aci-product-service",
-          "Port": 64807
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/category"
@@ -105,7 +105,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "aci-reservation-service",
-          "Port": 64808
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/api/products/reserve"
