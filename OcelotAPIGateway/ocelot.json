@@ -5,7 +5,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "aci-product-service",
           "Port": 64807
         }
       ],
@@ -16,7 +16,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "aci-product-service",
           "Port": 64807
         }
       ],
@@ -27,7 +27,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "aci-product-service",
           "Port": 64807
         }
       ],
@@ -38,7 +38,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "aci-product-service",
           "Port": 64807
         }
       ],
@@ -49,7 +49,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "aci-product-service",
           "Port": 64807
         }
       ],
@@ -60,7 +60,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "aci-reservation-service",
           "Port": 44387
         }
       ],
@@ -71,7 +71,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "aci-product-service",
           "Port": 64807
         }
       ],
@@ -104,7 +104,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "aci-reservation-service",
           "Port": 64808
         }
       ],
